@@ -2,8 +2,21 @@ package week1;
 
 public class SimpleLocation {
 
-    public double latitude;
-    public double longitude;
+    private double latitude;
+    private double longitude;
+
+    public double getLatitude(){
+        return this.latitude;
+    }
+
+    public void setLatitude(double latitude){
+        if(latitude < -180 || latitude > 180){
+            System.out.println("Illegal value. Must be between -180 and 180.");
+        }
+        else{
+            this.latitude = latitude;
+        }
+    }
 
     public SimpleLocation(){
         this.latitude = 32.9;
